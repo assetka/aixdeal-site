@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,7 @@
   <title>Thank You — AIxSuite</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1FQ8NXKXP"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,6 +14,18 @@
     gtag('config', 'G-N1FQ8NXKXP');
   </script>
 
+  <!-- Save GCLID Cookie -->
+  <script>
+    (function(){
+      const urlParams = new URLSearchParams(window.location.search);
+      const gclid = urlParams.get('gclid');
+      if (gclid) {
+        document.cookie = "_gcl_aw=1." + Date.now() + "." + encodeURIComponent(gclid) + "; path=/; max-age=7776000";
+      }
+    })();
+  </script>
+
+  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
