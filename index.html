@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AIxSuite — Your AI Sales Team</title>
-  
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1FQ8NXKXP"></script>
   <script>
@@ -14,24 +14,20 @@
     gtag('js', new Date());
     gtag('config', 'G-N1FQ8NXKXP');
   </script>
-  <!-- End Google Analytics -->
-  
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PTQMKJRK');</script>
-  <!-- End Google Tag Manager -->
-  
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
-  
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTQMKJRK"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <header class="bg-white shadow p-6 flex justify-between items-center">
     <h1 class="text-3xl md:text-4xl font-extrabold">AIxSuite</h1>
@@ -77,7 +73,7 @@
       <div class="text-center">
         <h3 class="text-3xl font-bold mb-6">Step 4 — Handoff to Sales</h3>
         <p class="text-xl mb-6">Once the prospect shows real interest, AI compiles a complete prospect dossier and passes it directly to your sales team to close the deal faster.</p>
-<p class="text-sm text-gray-600 mt-4">This step ensures your managers engage only with warm, well-qualified leads, saving time and boosting close rates.</p>
+        <p class="text-sm text-gray-600 mt-4">This step ensures your managers engage only with warm, well-qualified leads, saving time and boosting close rates.</p>
       </div>
     </div>
   </section>
@@ -98,17 +94,28 @@
 
   <section id="cta" class="py-20 px-6 text-center">
     <h3 class="text-4xl font-bold mb-6">Ready to Let AI Find and Nurture Your Next Clients?</h3>
-    <form action="https://formspree.io/f/xaneavjk" method="POST" class="max-w-md mx-auto bg-white p-8 rounded shadow space-y-6">
+    <form id="aix-form" action="https://formspree.io/f/xaneavjk" method="POST" class="max-w-md mx-auto bg-white p-8 rounded shadow space-y-6">
       <input type="text" name="name" placeholder="Your Name" required class="w-full p-4 rounded border border-gray-300 text-lg">
       <input type="email" name="email" placeholder="Your Email" required class="w-full p-4 rounded border border-gray-300 text-lg">
       <button type="submit" class="w-full bg-blue-600 text-white p-4 rounded font-semibold text-xl hover:bg-blue-700">Send</button>
-      <input type="hidden" name="_next" value="https://aixdeal.com/thankyou.html">
     </form>
+    <script>
+      document.getElementById('aix-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const form = this;
+        fetch(form.action, {
+          method: form.method,
+          body: new FormData(form)
+        }).then(response => {
+          if (response.ok) {
+            window.location.href = "/thankyou";
+          } else {
+            alert("Submission failed.");
+          }
+        });
+      });
+    </script>
   </section>
-
-  
-
-
 
   <footer class="bg-gray-800 text-white text-center p-6">
     &copy; 2025 AIxSuite. All rights reserved.
