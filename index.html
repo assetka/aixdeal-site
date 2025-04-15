@@ -69,27 +69,49 @@
     </div>
   </section>
 
+  <section class="py-16 px-6 bg-gradient-to-br from-blue-100 to-white">
+    <h3 class="text-4xl font-bold text-center mb-12">Real Results</h3>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h4 class="text-2xl font-bold mb-2">Startup A — Fintech SaaS</h4>
+        <p class="text-lg">Generated $110k in new revenue within 3 weeks by targeting funded startups hiring sales leads.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h4 class="text-2xl font-bold mb-2">Agency B — Web3 Marketing</h4>
+        <p class="text-lg">Booked 12 discovery calls in a week by targeting NFT companies launching new products in UAE.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="cta" class="py-20 px-6 text-center">
     <h3 class="text-4xl font-bold mb-6">Ready to Let AI Find and Nurture Your Next Clients?</h3>
-    <form id="leadForm" class="max-w-md mx-auto bg-white p-8 rounded shadow space-y-6">
+    <form action="https://formspree.io/f/xaneavjk" method="POST" class="max-w-md mx-auto bg-white p-8 rounded shadow space-y-6">
       <input type="text" name="name" placeholder="Your Name" required class="w-full p-4 rounded border border-gray-300 text-lg">
       <input type="email" name="email" placeholder="Your Email" required class="w-full p-4 rounded border border-gray-300 text-lg">
       <button type="submit" class="w-full bg-blue-600 text-white p-4 rounded font-semibold text-xl hover:bg-blue-700">Send</button>
+      <input type="hidden" name="_next" value="https://aixdeal.com/thankyou.html">
     </form>
   </section>
 
-  <script>
-    document.querySelector('#leadForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const form = this;
-      fetch("https://formspree.io/f/xaneavjk", {
-        method: "POST",
-        body: new FormData(form)
-      }).then(() => {
-        window.location.href = "/thankyou";
-      });
-    });
-  </script>
+  
+<section class="py-20 px-6 text-center bg-white">
+  <h3 class="text-4xl font-bold mb-10">What Our AI Sees</h3>
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div>
+      <img src="signal.jpg" alt="Signal dashboard" class="mx-auto rounded-lg shadow-md mb-4">
+      <p class="text-lg">Real-time buying signals</p>
+    </div>
+    <div>
+      <img src="pitch.JPG" alt="Outreach email example" class="mx-auto rounded-lg shadow-md mb-4">
+      <p class="text-lg">AI-generated outreach pitch</p>
+    </div>
+    <div>
+      <img src="followup.JPG" alt="Follow-up example" class="mx-auto rounded-lg shadow-md mb-4">
+      <p class="text-lg">Automated follow-up email</p>
+    </div>
+  </div>
+</section>
+
 
   <footer class="bg-gray-800 text-white text-center p-6">
     &copy; 2025 AIxSuite. All rights reserved.
