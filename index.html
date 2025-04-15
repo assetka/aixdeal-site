@@ -15,6 +15,16 @@
     gtag('config', 'G-N1FQ8NXKXP');
   </script>
 
+  
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const gclid = urlParams.get('gclid');
+    if (gclid) {
+      document.cookie = "_gcl_aw=1." + Date.now() + "." + encodeURIComponent(gclid) + "; path=/; max-age=7776000";
+    }
+  </script>
+
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
