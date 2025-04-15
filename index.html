@@ -14,6 +14,7 @@
     gtag('config', 'G-N1FQ8NXKXP');
   </script>
 
+  <!-- Save GCLID Cookie -->
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const gclid = urlParams.get('gclid');
@@ -100,9 +101,11 @@
 
   <section id="cta" class="py-20 px-6 text-center">
     <h3 class="text-4xl font-bold mb-6">Ready to Let AI Find and Nurture Your Next Clients?</h3>
-    <form id="aix-form" action="https://formspree.io/f/xaneavjk" method="POST" class="max-w-md mx-auto bg-white p-8 rounded shadow space-y-6">
+    <form action="https://formsubmit.co/asset.karymsak@gmail.com" method="POST" class="max-w-md mx-auto bg-white p-8 rounded shadow space-y-6">
       <input type="text" name="name" placeholder="Your Name" required class="w-full p-4 rounded border border-gray-300 text-lg">
       <input type="email" name="email" placeholder="Your Email" required class="w-full p-4 rounded border border-gray-300 text-lg">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://aixdeal.com/thankyou.html">
       <input type="hidden" name="gclid" id="gclid-field">
       <button type="submit" class="w-full bg-blue-600 text-white p-4 rounded font-semibold text-xl hover:bg-blue-700">Send</button>
     </form>
@@ -122,31 +125,6 @@
           gclidField.value = gclid;
         }
       }
-
-      const form = document.getElementById('aix-form');
-      if (!form) return;
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        fetch(form.action, {
-          method: form.method,
-          body: new FormData(form)
-        })
-        .then(response => {
-          if (response.ok) {
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-              event: 'form_submission_success',
-              eventCallback: function() {
-                window.location.href = "/thankyou";
-              },
-              eventTimeout: 2000
-            });
-          } else {
-            alert("Submission failed.");
-          }
-        })
-        .catch(() => alert("Submission error."));
-      });
     });
   </script>
 </body>
